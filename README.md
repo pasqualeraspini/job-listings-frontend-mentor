@@ -5,6 +5,6 @@
 
 ## How To use
 
-1.Clone/Download the repo.
-2.Run npm install or yarn install. 
-3.Run npm start or yarn start to start the [local dev server port 3000](http://localhost:3000) .
+1. Clone/Download the repo.
+1. Run npm install or yarn install. 
+1. Run npm start or yarn start to start the [local dev server port 3000](http://localhost:3000).
