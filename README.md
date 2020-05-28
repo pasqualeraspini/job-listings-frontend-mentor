@@ -43,6 +43,4 @@ To add a filter, the user needs to click on the tablets on the right-side of the
 
 Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
 
-
-![https://business.gronda.eu/wp-content/uploads/2016/12/react-logo-300x266.png] Made with React 
 ## [My solution](https://job-listings-frontend-mentor.now.sh/)
