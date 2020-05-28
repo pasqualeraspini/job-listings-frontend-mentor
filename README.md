@@ -1,6 +1,10 @@
 # Job Listings
 ###### Frontend Mentor Challenge
 
-![](preview.jpg)
+![https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt](preview.jpg)
 
-1.Clone/Download the repo. 2.Run npm install or yarn install. 3.Change the values in src/yourdata.js to suit your use-case. 4.Run npm start or yarn start to start the local dev server port 3000.
+## How To use
+
+1.Clone/Download the repo.
+2.Run npm install or yarn install. 
+3.Run npm start or yarn start to start the [local dev server port 3000](http://localhost:3000) .
