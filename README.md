@@ -1,6 +1,8 @@
 # Job Listings
 ###### Frontend Mentor Challenge
 
+Made with React and Styled-Components
+
 ![https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt](preview.jpg)
 
 ## How To use
