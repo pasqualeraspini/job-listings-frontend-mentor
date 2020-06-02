@@ -112,38 +112,44 @@ const Job = styled.li`
                 margin-left: 0;
                 padding-top: 1.2rem;
             }
-        
-            .badges {
-                margin-bottom: 1.6rem;
-                font-weight: 700;
 
-                * {
-                    &:first-child {
-                        display: block;
-                        font-size: 1.2rem;
-                        margin-bottom: .8rem;
-                        color: hsl(180, 29%, 50%);
+            .secondary-info {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.2rem;
+
+                .company-name {
+                    display: block;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin-right: 1.2rem;
+                    color: hsl(180, 29%, 50%);
+                }
+
+                .badges {
+                    font-weight: 700;
+    
+                    * {
+                        &:not(:last-child) {
+                            margin-right: .8rem;
+                        }
                     }
-
-                    &:not(:last-child) {
-                        margin-right: .8rem;
+    
+                    .badge {
+                        color: white;
+                        padding: .4rem .8rem;
+                        border-radius: 10rem;                   
+                    }
+    
+                    .badge-new {
+                        background-color: hsl(180, 8%, 52%);
+                    }
+    
+                    .badge-featured {
+                        background-color: hsl(180, 14%, 20%);
                     }
                 }
-
-                .badge {
-                    color: white;
-                    padding: .4rem .8rem;
-                    border-radius: 10rem;                   
-                }
-
-                .badge-new {
-                    background-color: hsl(180, 8%, 52%);
-                }
-
-                .badge-featured {
-                    background-color: hsl(180, 14%, 20%);
-                }
-            }
+            }    
 
             .position {
                 font-size: 1.8rem;
@@ -155,7 +161,7 @@ const Job = styled.li`
                 }
             }
 
-            .secondary-info {
+            .tertiary-info {
                 font-weight: 500;
                 font-size: 1.4rem;
                 color: hsl(180, 29%, 60%);
@@ -351,12 +357,9 @@ const Job = styled.li`
 
 export default class JobItem extends React.Component {
     renderBadges = () => {
-        const { company } = this.props.jobInfo;
-
         if (this.props.isNew && this.props.isFeatured) {
             return (
                 <div className="badges"> 
-                    <span>{company}</span>
                     <span className="badge badge-new">NEW!</span>
                     <span className="badge badge-featured">FEATURED</span>
                 </div>
@@ -364,14 +367,12 @@ export default class JobItem extends React.Component {
         } else if (this.props.isNew) {
             return (
                 <div className="badges"> 
-                    <span>{company}</span>
                     <span className="badge badge-new">NEW!</span>
                 </div>
             )
         } else if (this.props.isFeatured) {
             return (
-                <div className="badges"> 
-                    <span>{company}</span>
+                <div className="badges">
                     <span className="badge badge-featured">FEATURED</span>
                 </div>
             )
@@ -399,7 +400,7 @@ export default class JobItem extends React.Component {
     onCloseJobClick = e => e.target.parentElement.parentElement.classList.remove('active')
 
     render() {
-        const { logo, position, postedAt, contract, location, role, level, languages, tools } = this.props.jobInfo;
+        const { logo, company, position, postedAt, contract, location, role, level, languages, tools } = this.props.jobInfo;
 
         return (
             <Job onClick={e => e.target.classList.add('active')} 
@@ -411,9 +412,12 @@ export default class JobItem extends React.Component {
                 <div className="main-content"> 
                     <div className="img-box"> <img src={logo} alt="agency" /> </div>
                     <div className="info"> 
-                        {this.renderBadges()}
+                        <div className="secondary-info">
+                            <span className="company-name">{company}</span>
+                            {this.renderBadges()}
+                        </div> 
                         <h1 className="position">{position}</h1>
-                        <div className="secondary-info"> 
+                        <div className="tertiary-info"> 
                             {postedAt} &bull; {contract} &bull; {location}
                         </div>
                     </div>
