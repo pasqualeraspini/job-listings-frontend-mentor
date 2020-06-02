@@ -6,7 +6,7 @@ import { device } from '../breakpoints';
 const Job = styled.div`
     width: 100%;
     min-height: 15rem;
-    background-color: hsl(180, 52%, 96%);
+    background-color: white;
     border-radius: .8rem;
     box-shadow: 1rem 1rem 4rem hsla(180, 29%, 50%, .2);
     padding: 3rem;
@@ -77,7 +77,9 @@ const Job = styled.div`
 
     .main-content {
         display: flex;
+        align-items: center;
         align-self: start;
+        pointer-events: none;
 
         @media ${device.mobileS} {
             padding-bottom: 2rem;
@@ -169,7 +171,8 @@ const Job = styled.div`
         align-self: baseline;
         margin-top: 3.8rem;
 
-        @media ${device.mobileS} {
+        @media ${device.tablet} {
+            width: 100%;
             margin-top: 2.6rem;
         }
 
@@ -353,7 +356,7 @@ export default class JobItem extends React.Component {
         if (this.props.isNew && this.props.isFeatured) {
             return (
                 <div className="badges"> 
-                    <span> {company} </span>
+                    <span>{company}</span>
                     <span className="badge badge-new">NEW!</span>
                     <span className="badge badge-featured">FEATURED</span>
                 </div>
@@ -361,14 +364,14 @@ export default class JobItem extends React.Component {
         } else if (this.props.isNew) {
             return (
                 <div className="badges"> 
-                    <span> {company} </span>
+                    <span>{company}</span>
                     <span className="badge badge-new">NEW!</span>
                 </div>
             )
         } else if (this.props.isFeatured) {
             return (
                 <div className="badges"> 
-                    <span> {company} </span>
+                    <span>{company}</span>
                     <span className="badge badge-featured">FEATURED</span>
                 </div>
             )
@@ -399,8 +402,7 @@ export default class JobItem extends React.Component {
         const { logo, position, postedAt, contract, location, role, level, languages, tools } = this.props.jobInfo;
 
         return (
-            <Job id="job"
-                 onClick={e => e.target.classList.add('active')} 
+            <Job onClick={e => e.target.classList.add('active')} 
                  data-role={role} 
                  data-level={level} 
                  data-languages={languages} 
@@ -440,8 +442,8 @@ export default class JobItem extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <button className="apply-job">Apply Job</button>
-                    <button className="close-job" onClick={this.onCloseJobClick}><i className="gg-arrow-up"></i></button>
+                    <button title="apply job" className="apply-job">Apply Job</button>
+                    <button title="arrow up" className="close-job" onClick={this.onCloseJobClick}><i className="gg-arrow-up"></i></button>
                 </div>
             </Job>
         )
