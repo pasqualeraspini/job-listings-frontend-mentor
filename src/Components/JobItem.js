@@ -194,13 +194,14 @@ const Job = styled.li`
                 cursor: pointer;
                 padding: .8rem .6rem;
                 font-size: 1.2rem;
-                color:  hsl(180, 29%, 50%);
+                font-weight: 700;
+                color: hsl(180, 29%, 50%);
                 border-radius: .4rem;
                 transition: all .3s ease;
-                background-color: hsl(180, 52%, 96%);
+                background-color: hsl(180, 31%, 95%);
 
                 &:not(:last-child) {
-                    margin-right: .8rem;
+                    margin-right: 1.6rem;
                 }
 
                 &:hover {
