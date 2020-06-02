@@ -1,6 +1,6 @@
 const size = {
     mobileS: '23.5em',
-    tablet: '48em',
+    tablet: '50em',
 }
 
 export const device = {
