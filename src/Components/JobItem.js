@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { device } from '../breakpoints';
 
-const Job = styled.div`
+const Job = styled.li`
     width: 100%;
     min-height: 15rem;
     background-color: white;
